@@ -3,7 +3,6 @@ import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
 import ItemViewDish from "../components/ItemViewDish";
 import IMAGES from "../theme/images";
 import HeaderComponet from "../components/HeaderComponent";
-import { useIsFocused } from '@react-navigation/native';
 
 const MyNetworkScreen = ({route,navigation})=>{
     const [listFilter,setListFilter] = useState([]);

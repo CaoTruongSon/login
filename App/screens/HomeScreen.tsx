@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { View, Text, TextInput, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList } from 'react-native';
 import HeaderComponet from '../components/HeaderComponent';
 import IMAGES from '../theme/images';
 import ItemViewDish from '../components/ItemViewDish';
