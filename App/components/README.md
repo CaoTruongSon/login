@@ -1,0 +1,1 @@
+chứa các components dùng trung toàn app

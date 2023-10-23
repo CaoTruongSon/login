@@ -1,0 +1,1 @@
+Chứa logic code dùng riêng
