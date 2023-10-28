@@ -47,5 +47,9 @@ const IMAGES = {
     food: require('../assets/food.png'),
     timkiem: require('../assets/timkiem.png'),
     nhahang: require('../assets/nhahang.jpg'),
+    matkhau: require('../assets/matkhau.png'),
+    matkhauagain: require('../assets/matkhauagain.png'),
+    taikhoan: require('../assets/taikhoan.png'),
+    muitenxuong: require('../assets/muitenxuong.png'),
 }
 export default IMAGES;

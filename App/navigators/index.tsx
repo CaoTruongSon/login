@@ -5,8 +5,7 @@ import LoginScreen from '../screens/login';
 import HomeScreen from '../screens/HomeScreen';
 import SCREEN from './RouteKey';
 import BottomTab from './BottomTab';
-import IMAGES from '../theme/images';
-import { Image } from 'react-native';
+import Register from '../screens/Register';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +18,7 @@ const Natigator = () =>{
                 <Stack.Screen name ={SCREEN.LOGIN_SCREEN} component ={LoginScreen}/>
                 <Stack.Screen name ={SCREEN.BOTTOM_TAB} component ={BottomTab}/>
                 <Stack.Screen name ={SCREEN.HOME_SCREEN} component ={HomeScreen}/>
+                <Stack.Screen name ={SCREEN.REGISTER_SCREEN} component ={Register}/>
                 
             </Stack.Navigator>
         </NavigationContainer>

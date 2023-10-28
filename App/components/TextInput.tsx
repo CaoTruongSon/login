@@ -1,6 +1,5 @@
 import React from "react";
 import {Image,TextInput,View,StyleSheet,TouchableOpacity} from 'react-native'
-import IMAGES from '../theme/images';
 const TextInputComponent = ({
     iconLeft,
     iconRight,
@@ -43,7 +42,6 @@ const styles = StyleSheet.create({
         width:'80%',
         alignSelf:'center',
         borderRadius:10,
-        marginTop:10,
     },
     icon:{
         width:20,
