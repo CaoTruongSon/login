@@ -51,5 +51,8 @@ const IMAGES = {
     matkhauagain: require('../assets/matkhauagain.png'),
     taikhoan: require('../assets/taikhoan.png'),
     muitenxuong: require('../assets/muitenxuong.png'),
+    email: require('../assets/email.png'),
+    passhide: require('../assets/passhide.png'),
+    passshow: require('../assets/passshow.png'),
 }
 export default IMAGES;

@@ -21,7 +21,7 @@ const HeaderComponet = ({title, iconRight}: {title: string; iconRight?: any}) =>
         <View style={styles.containerHeader}>
             {/* StatusBar thanh chứa cột sóng điện thoại */}
             {/* transparent làm màu giống với màu style trong view */}
-            <StatusBar translucent backgroundColor='#FFD700'/>
+            <StatusBar translucent={true} backgroundColor='transparent'/>
             {/* Image chỉnh hình dạng icon.ảnh */}
             <TouchableOpacity onPress = {() => Navigation.navigate(SCREEN.LOGIN_SCREEN)}>
             <Image source={iconRight} style={styles.imgLeft}/>

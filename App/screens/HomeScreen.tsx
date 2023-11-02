@@ -84,7 +84,7 @@ const render = ({item}) =>{
   };
 
   return (
-    <View>
+    <View style={{flex: 1}}>
       <HeaderComponet
       title = 'Phổ biến'
       />

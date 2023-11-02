@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import HeaderComponet from "../components/HeaderComponent";
 import IMAGES from "../theme/images";
 

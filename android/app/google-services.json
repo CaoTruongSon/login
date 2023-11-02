@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "784042389831",
+    "project_id": "haha-edd84",
+    "storage_bucket": "haha-edd84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784042389831:android:18fbe87fb64fd59ce39c62",
+        "android_client_info": {
+          "package_name": "com.appb28"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPncSzkaLuL-CSKFISfutWR-DW2AWFrtM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

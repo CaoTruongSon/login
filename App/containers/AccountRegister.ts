@@ -8,19 +8,29 @@ const AccountRegister = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [passwordagain, setpasswordagain] = useState('');
+  const [email, setEmail] = useState('');
   const [checkName, setCheckName] = useState(false);
   const [checkPassword, setCheckPassword] = useState(false);
   const [checkPasswordAgain, setCheckPasswordAgain] = useState(false);
-  const [againName, setAgainName] = useState(false)
+  const [againName, setAgainName] = useState(false);
+  const [checkEmail, setCheckEmail] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(false);
+  const isEmailValid = (email) => /^[^\s@]+@gmail\.com$/.test(email);
   const Register = () =>{
     let formData = {
       name:name,
+      email:email,
       password:password,
+      selectedOption:selectedOption,
     }
     setCheckName(false);
     setCheckPassword(false);
     setCheckPasswordAgain(false);
     setAgainName(false);
+    setCheckEmail(false);
+    if (!isEmailValid(email)) {
+        setCheckEmail(true);
+    }
     if (!name.trim()){
         setCheckName(true);
     }
@@ -30,7 +40,7 @@ const AccountRegister = () => {
     if (password !== passwordagain){
         setCheckPasswordAgain(true);
     }
-    if (!name.trim() || password.length<6 || password !== passwordagain){
+    if (!name.trim() || password.length<6 || password !== passwordagain || !isEmailValid(email)){
         return;
     }
     axios.get('https://653a3aeae3b530c8d9e958c7.mockapi.io/api/register/account')
@@ -43,10 +53,11 @@ const AccountRegister = () => {
             axios.post('https://653a3aeae3b530c8d9e958c7.mockapi.io/api/register/account', formData)
             .then((respone)=>{
                 if (respone.data){
-                    Alert.alert('XIN CHÀO',`Chúc mừng ${respone.data.name} đã đăng kí thành công.`);
+                    selectedOption?Alert.alert('XIN CHÀO',`Chúc mừng ${respone.data.name} đã trở thành đối tác buôn bán.`):Alert.alert('XIN CHÀO',`Chúc mừng ${respone.data.name} đã đăng kí thành công.`);
                     setName('');
                     setPassword('');
                     setpasswordagain('');
+                    setEmail('');
                     Navigation.navigate(SCREEN.LOGIN_SCREEN);
                 }
             })
@@ -59,6 +70,6 @@ const AccountRegister = () => {
         Alert.alert('Lỗi.');
     })
 }
-    return {againName,Register,name,password,passwordagain,setName,setPassword,setpasswordagain,checkName, setCheckName,checkPassword, setCheckPassword,checkPasswordAgain, setCheckPasswordAgain};
+    return {selectedOption, setSelectedOption,checkEmail, setCheckEmail,email,setEmail,againName,Register,name,password,passwordagain,setName,setPassword,setpasswordagain,checkName, setCheckName,checkPassword, setCheckPassword,checkPasswordAgain, setCheckPasswordAgain};
 };
 export default AccountRegister;

@@ -1,5 +1,6 @@
 import React from "react";
 import {Image,TextInput,View,StyleSheet,TouchableOpacity} from 'react-native'
+import useLogin from "../containers/login";
 const TextInputComponent = ({
     iconLeft,
     iconRight,
@@ -19,13 +20,13 @@ const TextInputComponent = ({
     secureTextEntry?:boolean;
     onPressImRight?: any;
 }) =>{
-    
+    const {passshow} = useLogin();
     return(
         <View style = {styles.StyleInput}>
             {iconLeft && <Image source={iconLeft} style ={styles.icon}/>}
             <TextInput style ={styles.tpcontainer} placeholder={placeholder} value ={value} onChangeText={onChangeText} keyboardType={keyboardType} secureTextEntry={secureTextEntry}/>
             {iconRight && (
-                <TouchableOpacity onPress={onPressImRight}>
+                <TouchableOpacity onPress={passshow}>
                 <Image source={iconRight} style ={styles.icon}/>
                 </TouchableOpacity>
             )}

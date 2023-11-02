@@ -18,7 +18,7 @@ const BottomTab = () =>{
             options={{
                 tabBarLabel:({focused}) => <Text style={{color:focused?'#FF0000':'#000000'}}>{'Phổ biến'}</Text>,
                 tabBarIcon: ({focused}) =>(
-                    focused? (<Image source={IMAGES.noibat1} style={{width:20,height:20}}/>
+                    focused? (<Image source={IMAGES.noibat} style={{width:20,height:20}}/>
                     ):(
                         <Image source={IMAGES.noibat} style={{width:20,height:20}}/>
                     )
@@ -30,7 +30,7 @@ const BottomTab = () =>{
                 tabBarIcon: ({focused}) =>(
                     focused? (<Image source={IMAGES.food} style={{width:20,height:20}}/>
                     ):(
-                        <Image source={IMAGES.menu} style={{width:20,height:20}}/>
+                        <Image source={IMAGES.food} style={{width:20,height:20}}/>
                     )
                 ),
                 
@@ -43,7 +43,7 @@ const BottomTab = () =>{
                 tabBarIcon: ({focused}) =>(
                     focused? (<Image source={IMAGES.nhanvien2} style={{width:20,height:20}}/>
                     ):(
-                        <Image source={IMAGES.chat} style={{width:20,height:20}}/>
+                        <Image source={IMAGES.nhanvien2} style={{width:20,height:20}}/>
                     )
                 ),
                
@@ -54,7 +54,7 @@ const BottomTab = () =>{
                 tabBarIcon: ({focused}) =>(
                     focused? (<Image source={IMAGES.canhan1} style={{width:20,height:20}}/>
                     ):(
-                        <Image source={IMAGES.user} style={{width:20,height:20}}/>
+                        <Image source={IMAGES.canhan1} style={{width:20,height:20}}/>
                     )
                 ),
                

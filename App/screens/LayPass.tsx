@@ -3,57 +3,44 @@ import {TouchableOpacity,View,Text,StyleSheet,ImageBackground} from 'react-nativ
 import HeaderComponet from '../components/HeaderComponent';
 import IMAGES from '../theme/images';
 import TextInputComponent from '../components/TextInput';
-import useLogin from '../containers/login';
-import RegisterScreen from '../containers/Register';
 import CheckBox from '@react-native-community/checkbox';
-const LoginScreen = () => {
-  const {userName, onChangeUserName,password, onChangePassword, onSubmit,useErr,checkBox, setCheckBox,passName} = useLogin();
-  const {RegisterS} = RegisterScreen();
-
-  return (
+import layLaiPass from '../containers/layLaiPass';
+const LayPass = () => {
+  const {Name,setName,Gmail,setGmail,onChangeName,onChangeGmail,onSave,KoTrung} = layLaiPass();
+  return (<>
+    <View style ={{flex:1}}>
       <ImageBackground source={IMAGES.nhahang} style ={styles.login}>
       <HeaderComponet
-      title = 'Màn hình đăng nhập'
+      title = 'Lấy lại mật khẩu'
+      iconRight={IMAGES.back}
       />
       <View style ={styles.StyleInput}>
         <TextInputComponent
         iconLeft={IMAGES.taikhoan}
         placeholder='User Name'
-        value={userName}
-        onChangeText={(text:string) => onChangeUserName(text)}
+        value={Name}
+        onChangeText={(text:string) => onChangeName(text)}
         />
+       
         <View style = {styles.topInput}>
         <TextInputComponent 
         iconLeft={IMAGES.matkhau}
-        placeholder='Password'
-        value={password}
-        onChangeText={(text:string) => onChangePassword(text)}
-        secureTextEntry={true}
-        />     
-        </View>
-        <View style={styles.checkbox}>
-        <CheckBox
-         disabled={false}
-         value={checkBox}
-         onValueChange={()=> setCheckBox(!checkBox)}
-         tintColors={{true:'purple'}}
+        placeholder='Gmail'
+        value={Gmail}
+        onChangeText={(text:string) => onChangeGmail(text)}
         />
-        <Text style={styles.textPass}>Ghi nhớ mật khẩu</Text>
-        <View style ={styles.forgetpass}>
-        <TouchableOpacity onPress = {passName}><Text style={{color:'blue',textDecorationLine:'underline',fontWeight:'bold'}}>Quên mật khẩu</Text></TouchableOpacity>
         </View>
-        </View>
+        <Text style ={styles.useErr}>{KoTrung?'Tài khoản và gmail không khớp.':''}</Text>
         <View style ={styles.stySubmit}>
-        <TouchableOpacity onPress = {onSubmit}>
-          <Text style = {styles.Submit}>{'Đăng nhập'}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress = {RegisterS}>
-          <Text style = {styles.Submit}>{'Đăng kí'}</Text>
+        <TouchableOpacity onPress = {onSave}>
+          <Text style = {styles.Submit}>{'Gửi'}</Text>
         </TouchableOpacity>
         </View>
-        <Text style ={styles.useErr}>{useErr?'Tài khoản hoặc mật khẩu không chính xác.':''}</Text>
         </View>
       </ImageBackground>
+      
+    </View>
+    </>
   );
 };
 const styles = StyleSheet.create({
@@ -100,4 +87,4 @@ const styles = StyleSheet.create({
     width:'100%',
   }
 })
-export default LoginScreen;
+export default LayPass;
